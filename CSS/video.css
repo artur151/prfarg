@@ -1,0 +1,26 @@
+.section-padding{
+	padding: 60px;
+}
+
+.center{
+	top: 250px;
+	left: 330px;
+	margin-left: center;
+	margin-bottom: center;
+	position: absolute;
+	
+}
+.tex{
+
+	background-color: #ADC2A9;
+	border-radius: 100px;
+text-align: center;
+font-size: 24px;
+font-weight: bolder;
+}
+.pdf{
+	
+	position:absolute;
+	top: 650px;
+	left: 290px;
+}

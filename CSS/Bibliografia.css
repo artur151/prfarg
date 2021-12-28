@@ -1,0 +1,14 @@
+.presentacion__texto{
+	background-color: #FCFFA6;
+	margin-bottom:0px;
+	padding: 22px;
+	text-align: justify;
+	border-radius: 50px;
+	width: 50%;
+	margin-top: 10px;
+	font-weight: bolder;
+	font-size: 0.9em;
+	top: 100px;
+	
+	margin: 2rem auto;
+}

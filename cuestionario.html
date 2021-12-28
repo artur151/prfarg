@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="robots" content="noindex">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--CSS-->
+  <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+  <link rel="stylesheet" href="CSS/cuestionario.css">
+
+  <!--Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet"
+
+
+  <!-- Latest compiled and minified JS -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <!--Shortcurt icon-->
+  <link rel="shortcut icon"  href="img/razo.png">
+    <style>
+      <style>
+    h1{
+      text-align: justify;
+      color: #ccc;
+
+    }
+
+    p{
+      color: #ccc
+    }
+    a{color: #ccc}
+
+  </style>
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="js/cuestionario.js"></script>
+
+
+  <title>ED Cuesttionario</title>
+
+
+
+</head>
+
+
+
+<body background="img/gris.jpg">
+
+ <header>  
+  <!--Nav-->
+  <nav> 
+    <ul>
+
+      <li><a href="cuestionario.html">Cuestionario</a></li>
+
+
+    </ul>
+  </nav>
+
+  <!--logo-->
+  <div class="logo">
+    <div class="inicio">
+      <p>Inicio</p>
+    </div>
+    <a href="index.html">
+      <!--svg logo-->
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bolt" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ccc" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <polyline points="13 3 13 10 19 10 11 21 11 14 5 14 13 3" />
+      </svg>
+    </a>
+  </div>
+  <div class="logo2">
+    <div class="anterior">
+      <p>anterior</p>
+    </div>
+    <a href="Temario.html">
+      <!--svg logo-->
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-bar-left" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ccc" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <line x1="4" y1="12" x2="14" y2="12" />
+        <line x1="4" y1="12" x2="8" y2="16" />
+        <line x1="4" y1="12" x2="8" y2="8" />
+        <line x1="20" y1="4" x2="20" y2="20" />
+      </svg>
+    </a>
+  </div>
+
+
+</header>
+
+
+
+
+
+<main>
+  
+  <script>
+    var total=3;
+    var correctas=0;
+    var promedio=0;
+    var entrar=new Array;
+    var examen=[];
+    function examenAleatorio(){
+      total=10;
+      var cont=0;
+      var indice=0;
+      
+      while(cont<total){
+        
+        indice=Math.floor(Math.random()*preguntas.length);
+        
+        if (!preguntas[indice].ocupado){
+          
+          preguntas[indice].ocupado=true;
+          examen[cont]=preguntas[indice];
+          
+          cont++;
+        }
+        
+        
+      }
+      
+      
+    }
+    function valua(indice,resp){
+      
+      if (examen[indice].correcta== resp){
+        if(!entrar[indice]){
+          entrar[indice]=1;
+          correctas++;
+        }
+        
+        document.getElementById('resp' + (indice)).innerHTML = ''/*'<span class="bien">Respuestas Correctas&nbsp;'+correctas+'  </span>'*/;
+        
+      }else{
+        if(!entrar[indice]){
+          entrar[indice]=1;
+          
+        }
+        
+        document.getElementById('resp' + (indice)).innerHTML = '' /*'<span class="mal">Respuesta Incorrecta&nbsp; </span>'*/;
+        
+      }
+      
+    }
+    
+    
+    function notaFinal() {
+      promedio=correctas/total;
+      promedio*=10;
+      document.getElementById('puntuacionfinal').innerHTML = '<span class="notas"><center>Tu calificación es: &nbsp;'+promedio+'</center></span>';
+    }
+    function unoOn(){
+      
+      document.getElementById("Uno").style.visibility="visible";
+      //$("#Uno").hide().css({visibility: "visible"}).fadeIn("slow");
+      // $('#Uno').css('visibility','visible').hide().fadeIn('slow');
+    }
+    function unoOut(){
+      document.getElementById("Uno").style.visibility="hidden";
+      //$("#navigationcontainer").fadeTo("slow",0.6);
+      //$('#Uno').css('visibility','hidden').hide().fadeIn('slow');
+    }
+    
+    function dosOn(){
+      document.getElementById("Dos").style.visibility="visible";
+      //$("#Dos").delay(500).fadeTo("slow", 0.6);
+    }
+    function dosOut(){
+      document.getElementById("Dos").style.visibility="hidden";
+    }
+    function tresOn(){
+      document.getElementById("Tres").style.visibility="visible";
+    }
+    function tresOut(){
+      document.getElementById("Tres").style.visibility="hidden";
+    }
+    function cuatroOn(){
+      document.getElementById("Cuatro").style.visibility="visible";
+    }
+    function cuatroOut(){
+      document.getElementById("Cuatro").style.visibility="hidden";
+    }
+    
+    examenAleatorio();
+      auxilio = 0; //los radiobotones se sombrean en su respectiva pregunta
+      for(i=0;i<total;i++){
+        document.write("<div class='numero'  ><br><p style='font-size:30px; font-family:'Comic Sans MS', cursive;'>"+ parseInt(i+1)+"<p></div>");
+        document.write("<div class='pregunta'>");
+        document.write("<left>"+examen[i].pregun+"</left>");//examen[i].pregunta
+        document.write("<div id='resp"+i+"'>&nbsp;</div>");
+        document.write("<td><left><p><input id='"+auxilio+"' type='radio' name='cadena"+i+"' value='0' onClick=valua("+i+",this.value) /><label for='"+auxilio+"'>"+examen[i].respuestas[0] +"</label></p></left> </td>"); ++auxilio;
+        document.write("<td><left><br><p><input id='"+auxilio+"' type=radio name='cadena"+i+"' value='1' onClick=valua("+i+",this.value) /><label for='"+auxilio+"'>"+examen[i].respuestas[1] +"</label></p></left></td></tr><tr>"); ++auxilio;
+        document.write("<td><left><br><p><input id='"+auxilio+"' type=radio name='cadena"+i+"' value='2' onClick=valua("+i+",this.value) /><label for='"+auxilio+"'>"+examen[i].respuestas[2] +"</label></p></left></td>"); ++auxilio;
+        document.write("<td><left><br><p><input  id='"+auxilio+"'type=radio name='cadena"+i+"' value='3' onClick=valua("+i+",this.value) /><label for='"+auxilio+"'>"+examen[i].respuestas[3] +"</label></p></left</td></tr>"); ++auxilio;
+        document.write("</table></div>");
+      }
+    </script>
+
+
+
+    <br><br>
+    <center>
+      <input type="submit" value="Revisar" onclick="notaFinal()"/>
+      <br><br>
+      <div id="puntuacionfinal"><center>&nbsp;</center></div><div id="notafinal">&nbsp;</div>
+    </center>
+  </div><!--del rowcont-->
+
+</main>
+<footer> 
+
+  <ul  class="footer__redes-sociales">
+    <!--Facebook-->
+    
+  </ul>
+
+</footer>
+
+
+
+</body>
+</html>

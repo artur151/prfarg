@@ -1,0 +1,120 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  border-bottom: solid #ccc;
+  font-weight: bolder;
+}
+
+body{
+ 
+  font-family: 'Patrick Hand', cursive;
+
+}
+
+/*Header*/
+header{
+ 
+
+
+    padding: 40px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+}
+
+nav{
+  position: fixed;
+  display: inline-block;
+  padding: -50px;
+  font-size: 30px;
+   width: 100%;
+}
+
+#puntuacionfinal{
+  font-size: 20px;
+  color: white;
+}
+
+.numero{
+ 
+  color:red;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 90px;
+  text-align: center;
+
+} 
+.pregunta{
+  color:white;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 17px;
+  text-align: center;
+}
+
+.logo{
+
+  display: inline-block;
+  position: absolute;
+  right: 100px;
+  top: 15px;
+  }
+
+.inicio{
+  display: inline-block;
+  position: absolute;
+  right: -17px;
+  top: 30px;
+
+}
+.logo2{
+display: inline-block;
+  position: absolute;
+  right: 200px;
+  top: 15px;
+  }
+
+
+.anterior{
+  display: inline-block;
+  position: absolute;
+  right: -17px;
+  top: 30px;
+}
+nav li{
+  
+  display: inline-block;
+  margin-right: 30px;
+}
+
+
+/*footer*/
+
+footer{
+  width: 100%;
+  background-color: #ccc;
+  position: fixed;
+  bottom: 0px;
+  padding: 10px;
+}
+
+/*main*/
+main{
+  margin-top: 14vh;
+  margin-bottom: 16vh;
+
+}
+
+
+
+
+
